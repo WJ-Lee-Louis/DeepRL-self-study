@@ -1281,7 +1281,7 @@ class DPOTrainer(BaseTrainer):
             chosen_rewards = self.beta * (chosen_logps.to(device) - ref_chosen_logps.to(device)).detach()
             rejected_rewards = self.beta * (rejected_logps.to(device) - ref_rejected_logps.to(device)).detach()
 
-        return losses, chosen_rewards, rejected_rewards
+        return losses, chosen_rewards, rejected_rewards # reward estimation이 policy ratio였기 때문에 반환 자체는 reward 이름으로 theta와 reference policy ratio 각각 반환됨
 
     def _compute_loss_liger(
         self, model: nn.Module, batch: dict[str, list | torch.LongTensor]
