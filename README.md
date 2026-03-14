@@ -42,3 +42,4 @@
 - No Value Model (Critic)
 - Approximating KL Divergence -> GRPO Object Alignment
 - Outcome/Process Reward
+- (additional) DAPO
